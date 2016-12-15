@@ -1,0 +1,5 @@
+/Gemfile.lock
+/.vagrant
+/.bundle
+/spec/fixtures/modules
+coverage

@@ -1,0 +1,17 @@
+[Unit]
+Description=Apache Hue server
+Documentation=https://github.com/cloudera/hue
+
+[Service]
+Type=simple
+User=hue
+Group=hue
+SyslogIdentifier=<%= @service_name %>
+Environment='HUE_CONF_DIR=<%= @config_dir %>'
+ExecStart=/usr/local/hue/build/env/bin/supervisor -p <%= @pid_location %> -l <%= @log_dir %> -d
+
+LimitNOFILE=65536
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
