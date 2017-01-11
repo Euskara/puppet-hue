@@ -1,3 +1,4 @@
+# Hue param class
 class hue::params {
   $version         = '3.11.0'
   $install_method  = 'bin'
